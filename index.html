@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138260866-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-138260866-1');
+</script>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="description" content="A javascript game project that brings a retro classic with a twist online. Play space invaders in your browser now!">
+
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    <title>Play Space Invaders Online! - Javascript Retro Game with a twist</title>
+
+</head>
+
+<body>
+
+    <div id="game-wrapper">
+
+    <div id="game-info">
+
+        <h1>Space Invaders!</h1>
+
+        <div class="game-stats">
+
+            
+
+            
+
+            <h2>Score: <span id="score"></span></h2>
+
+            <h2>Color: <div id="lasercolor"></div></h2>
+
+            <h2>Level: <span id="level"></span></h2>
+
+        </div>
+
+        <div class="controls">
+
+            <h2>Controls</h2>
+
+            <p>Space to fire</p>
+
+            <p>Left/Right Arrows to move</p>
+
+            <p>Z to shift colors!</p>
+
+        </div>
+
+        <div class="disclaimer">
+
+            <h2>Javascript/Jquery Game Project for BCIT TWD Intake 21</h2>
+
+            <p>Coded and designed by Alvin Chou</p>
+
+        </div>
+
+    </div>
+
+    
+
+    <div id="gameboard">
+	    <div class="lives">
+	    	<p>Lives: <span id="lives"></span></p>
+	    	<p>Enemies: <span id="remaining"></span></p>
+	    </div>
+            <div class="warning-messages">
+		                        <p>Boss HP: <span id="hp"></span></p>
+
+                    <p>ProTip: Boss needs to damaged by OPPOSITE COLOR of his shield!</p>
+
+            </div>
+
+            <span id="warning-message"></span>
+
+            <div class="overlay" id="splash-screen">
+
+                <h1 style="text-align: center;">Space Invaders - Now With Color Logic</h1>
+                <button id="game-start" class="game-start">
+
+                    <img src="./assets/images/alien-one-red.gif" alt="Red space invader">
+
+                    <p>Click to Start</p>
+
+                </button>
+
+            </div>
+
+            <div class="overlay" id="instructions">
+
+                <div class="example-aliens">
+
+                    <img src="./assets/images/alien-one-red.gif" alt="Red space invader">
+
+                    <img src="./assets/images/alien-two-blue.gif" alt="Blue space invader">
+
+                </div>
+
+                <div class="instructions-text">
+
+                    <h2>Destroy all space invaders to advance!</h2>
+
+                    <p>Press SPACE to fire</p>
+
+                    <p>Only lasers of a matching color to the space invader will kill it</p>
+
+                    <p>Press Z key to switch colors</p>
+
+                    <h2>Good Luck!</h2>
+
+                </div>
+
+                <button id="ready-start" class="game-start">
+
+                        <img src="./assets/images/ship-red.png" alt="Red player spaceship">
+
+                        <p>Click to start!</p>
+
+                    </button>
+
+                
+
+            </div>
+
+            <div class="overlay" id="level-clear">
+
+                <div class="message-div">
+
+                    <h2>Level cleared!</h2>
+
+                </div>
+
+            </div>
+
+            <div class="overlay" id="win-game">
+
+                <h1>Congratulations, you stopped the alien invasion!!</h1>
+
+                    <div class="end-options">
+
+                            <button class="play-again game-start replay">
+
+                                    <img src="./assets/images/ship-red.png" alt="Red player spaceship">
+
+                                    <p>Play Again?</p>
+
+                            </button> 
+
+                            <button class="quit-game game-start replay">
+
+                                    <img src="./assets/images/alien-one-blue.gif" alt="Blue space invader">
+
+                                    <p>Quit</p>
+
+                            </button> 
+
+
+
+                    </div>
+
+                
+
+            </div>
+
+            <div class="overlay" id="game-end">
+
+                <h1>You Lose!</h1>
+
+                <img class="lose-img" src="./assets/images/metroid.gif" alt="Skull alien space invader in a ufo">
+
+                <div class="end-options">
+
+                        <button class="play-again game-start replay">
+
+                                <img src="./assets/images/ship-red.png" alt="Red player spaceship">
+
+                                <p>Play Again?</p>
+
+                        </button> 
+
+                        <button class="quit-game game-start replay">
+
+                                <img src="./assets/images/alien-one-blue.gif" alt="Blue space invader">
+
+                                <p>Quit</p>
+
+                        </button> 
+
+
+
+                </div>
+
+            </div>
+
+        <img class="player" src="./assets/images/ship-red.png" alt="Player space ship">
+
+    </div>
+
+    </div>
+
+    
+
+</body>
+
+
+
+<audio id="laser_sound"><source src="./assets/music/laser.mp3"></audio>
+
+
+
+
+        
+
+<script src="./js/jquery-3.2.1.min.js"></script>
+
+
+
+<script src="./js/game.js"></script>
+
+</html>

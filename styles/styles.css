@@ -1,0 +1,559 @@
+body {
+
+    background-color: #020202;
+
+    overflow: hidden;
+
+    height: 100vh;
+
+}
+
+
+
+h1, h2, p {
+
+    color: white;
+
+}
+
+.lives {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.lives p {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0 30px;
+}
+
+.overlay {
+
+    display: none;
+
+    width: 100%;
+
+    height: 100%;
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    z-index: 10;
+
+    background-color: black;
+
+}
+
+
+
+#splash-screen {
+
+    display: block;
+
+}
+
+
+
+#game-wrapper {
+
+    left: 0;
+
+    /* top: 101vh; */
+
+    width: 90%;
+
+    margin: 0 auto;
+
+    display:flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    position: absolute;
+
+}
+
+
+
+#game-info {
+
+    width: 30vw;
+
+    height: 35vw;
+
+    margin: 15px;
+
+    color: white;
+
+   
+
+}
+
+
+
+#game-info .game-stats, #game-info .controls, #game-info .disclaimer {
+
+    margin-bottom: 30px;
+
+    border-radius: 6px;
+
+    border: 10px solid #808080;
+
+    padding: 0 30px 0 30px;
+
+}
+
+
+
+.warning-messages {
+
+    padding-left: 30px;
+
+    padding-right: 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    display: none;
+
+}
+
+
+
+.warning-messages p {
+
+    font-size: 1.6em;
+
+    font-weight: 700;
+
+}
+
+
+
+.title-image {
+
+    max-width: 50%;
+
+    display: block;
+
+    margin: 0 auto;
+
+}
+
+
+
+.game-start {
+
+    background: transparent;
+
+    border: none;
+
+    outline: none;
+
+    padding: 30px;
+
+    display: block;
+
+    margin: 0 auto;
+
+    cursor: pointer;
+
+}
+
+
+
+.game-start img {
+
+    height: 300px;
+
+    width: 300px;
+
+}
+
+
+
+.game-start p {
+
+    font-weight: 700;
+
+    font-size: 2em;
+
+    color: white;
+
+}
+
+
+
+#instructions {
+
+    display: none;
+
+}
+
+
+
+.example-aliens {
+
+    width: 60%;
+
+    margin: 60px auto 15px auto;
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+
+.example-aliens img {
+
+    width: 150px;
+
+    height: 150px;
+
+}
+
+
+
+.instructions-text {
+
+    width: 80%;
+
+    margin: 0 auto;
+
+    padding: 30px;
+
+    text-align: center;
+
+}
+
+
+
+.instructions-text h2, .instructions-text p {
+
+    color: white;
+
+}
+
+
+
+.instructions-text h2 {
+
+    font-size: 2.5em;
+
+}
+
+
+
+.instructions-text p {
+
+    font-size: 1.3em;
+
+    font-weight: 500;
+
+}
+
+
+
+#ready-start.game-start img {
+
+    width: 100px;
+
+    height: 100px;
+
+}
+
+
+
+#ready-start.game-start p {
+
+    margin-top: 0;
+
+}
+
+
+
+#level-clear {
+
+    display: none;
+
+}
+
+
+
+#level-clear .message-div {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+
+}
+
+
+
+#gameboard {
+
+    width: 1000px;
+
+    height: 860px;
+
+    margin: 15px;
+
+    background-color: black;
+
+    position: relative;
+
+    border: 10px solid #d30000;
+
+    border-radius: 6px;
+
+}
+
+
+
+#end-game {
+
+    display: none;
+
+}
+
+
+
+.player {
+
+    position: absolute;
+
+    width: 75px;
+
+    height: 75px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    bottom: 5%;
+
+}
+
+
+
+.laser {
+
+    background-color: #d30000;
+
+    position: absolute;
+
+    background-color: blue
+
+}
+
+
+
+.invader {
+
+    width: 50px;
+
+    height: 50px;
+
+    position: absolute;
+
+
+
+}
+
+
+
+.invader.boss {
+
+    width: 250px;
+
+    height: 250px;
+
+}
+
+
+
+.flash {
+
+    animation-name: flash;
+
+    animation-duration: 700ms;
+
+    animation-iteration-count: 1;
+
+}
+
+
+
+.invincible-flash {
+
+    animation-name: invincible-flash;
+
+    animation-duration: 700ms;
+
+    animation-iteration-count: 5;
+
+}
+
+
+
+#lasercolor {
+
+    width: 100px;
+
+    height: 50px;
+
+}
+
+
+
+.controls p {
+
+    font-size: 1.2em;
+
+}
+
+
+
+#game-end h1, #win-game h1 {
+
+    font-size: 3.2em;
+
+    text-align: center;
+
+    margin-top: 60px;
+
+}
+
+
+
+
+
+.lose-img {
+
+    width: 250px;
+
+    display: block;
+
+    margin: 0 auto;
+
+}
+
+
+
+.win-img {
+
+    width: 400px;
+
+    display: block;
+
+    margin: 0 auto;
+
+}
+
+
+
+.end-options {
+
+    display: flex;
+
+    width: 80%;
+
+    margin: 0 auto;
+
+}
+
+
+
+.end-options img{
+
+    width: 100px;
+
+    height: 100px;
+
+}
+
+
+
+
+
+
+
+#warning-message {
+
+    color: white;
+
+    font-size: 3em;
+
+    font-weight: 700;
+
+    display: block;
+
+    width: 100%;
+
+    text-align: center;
+
+    position: absolute;
+
+}
+
+
+
+@keyframes flash {
+
+    from, 50%, to {
+
+        -webkit-filter: brightness(1);
+
+        filter: brightness(1);  
+
+      /* opacity: 1; */
+
+    }
+
+  
+
+    25%, 75% {
+
+        -webkit-filter: brightness(2);
+
+        filter: brightness(2);  
+
+      /* opacity: 0; */
+
+    }
+
+  }
+
+
+
+  @keyframes invincible-flash {
+
+    from, 50%, to {
+
+      opacity: 1;
+
+    }
+
+  
+
+    25%, 75% {
+
+      opacity: 0;
+
+    }
+
+  }
+
